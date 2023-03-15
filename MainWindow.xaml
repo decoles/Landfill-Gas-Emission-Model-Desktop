@@ -1,0 +1,84 @@
+﻿<Window x:Class="lwrncLandgemWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lwrncLandgemWPF"
+        mc:Ignorable="d"
+        Title="Home" Height="720" Width="1080">
+    <Grid Background="#FFBFBFBF">
+        <GroupBox Header="1. PROVIDE LANDFILL CHARACTERISITCS" Margin="0,0,518,520">
+            <StackPanel Height="447">
+                <TextBlock>Landfill Open Year:</TextBlock>
+                <TextBox x:Name="txtOpenYear" TextChanged="TextBox_TextChanged_1" Width="106" HorizontalAlignment="Left" />
+                <TextBlock>Landfill Closure Year:</TextBlock>
+                <TextBox RenderTransformOrigin="0.622,0.259" Height="21" Width="106" HorizontalAlignment="Left" />
+                <RadioButton x:Name="radioCalClosureYear" Content="Have Model Calculate Closure Year?" Checked="RadioButton_Checked" IsChecked="False" Height="18" Margin="0,8,0,0"/>
+                <TextBlock><Run Text="Waste Desgin Capacity:"/></TextBlock>
+                <ComboBox x:Name="comboWasteDesign" Width="120" SelectionChanged="ComboBox_SelectionChanged" HorizontalAlignment="Left">
+                    <ComboBoxItem Content="megagrams" IsSelected="True"/>
+                    <ComboBoxItem Content="short tons"/>
+                </ComboBox>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="3. SELECT GASES/POLLUTANTS" Margin="0,383,518,132">
+            <StackPanel Height="447">
+                <TextBlock><Run Text="Gas/ Pollutant #1"/></TextBlock>
+                <ComboBox x:Name="comboPollutant1" Width="120" SelectionChanged="ComboBox_SelectionChanged" VerticalAlignment="Center" HorizontalAlignment="Left">
+                    <ComboBoxItem Content="megagrams" IsSelected="True"/>
+                    <ComboBoxItem Content="short tons"/>
+                </ComboBox>
+                <TextBlock><Run Text="Gas/ Pollutant #2"/></TextBlock>
+                <ComboBox x:Name="comboPollutant2" Width="120" SelectionChanged="ComboBox_SelectionChanged" HorizontalAlignment="Left">
+                    <ComboBoxItem Content="megagrams" IsSelected="True"/>
+                    <ComboBoxItem Content="short tons"/>
+                </ComboBox>
+                <TextBlock><Run Text="Gas/ Pollutant #3"/></TextBlock>
+                <ComboBox x:Name="comboPollutant3" Width="120" SelectionChanged="ComboBox_SelectionChanged" HorizontalAlignment="Left">
+                    <ComboBoxItem Content="megagrams" IsSelected="True"/>
+                    <ComboBoxItem Content="short tons"/>
+                </ComboBox>
+                <TextBlock><Run Text="Gas/ Pollutant #4"/></TextBlock>
+                <ComboBox x:Name="comboPollutant4" Width="120" SelectionChanged="ComboBox_SelectionChanged" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                    <ComboBoxItem Content="megagrams" IsSelected="True"/>
+                    <ComboBoxItem Content="short tons"/>
+                </ComboBox>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="2. DETERMINE MODEL PARAMETERS" Margin="0,189,518,326">
+            <StackPanel Height="447">
+                <TextBlock Height="15"><Run Text="Methane Generation Rate, k (year^-1)"/><LineBreak/><Run/></TextBlock>
+                <ComboBox x:Name="comboMethanGen" Width="120" SelectionChanged="ComboBox_SelectionChanged" VerticalAlignment="Center" HorizontalAlignment="Left">
+                    <ComboBoxItem Content="CAA Arid Area - 0.02"/>
+                    <ComboBoxItem Content="CAA Convetntional - 0.05"/>
+                    <ComboBoxItem Content="Inventory Conventional - 0.04"/>
+                    <ComboBoxItem Content="Inventory Arid Area - 0.02"/>
+                    <ComboBoxItem Content="Inventory Wet - 0.7"/>
+                    <ComboBoxItem Content="User Specified"/>
+                </ComboBox>
+                <TextBlock><Run Text="Potential Methane Geneartion Capacity, L0 (m^3/Mg):"/></TextBlock>
+                <ComboBox x:Name="comboPotentialGen" Width="120" SelectionChanged="ComboBox_SelectionChanged" HorizontalAlignment="Left">
+                    <ComboBoxItem Content="CAA Arid Area - 170"/>
+                    <ComboBoxItem Content="CAA Convetntional - 170"/>
+                    <ComboBoxItem Content="Inventory Conventional - 100"/>
+                    <ComboBoxItem Content="Inventory Arid Area - 100"/>
+                    <ComboBoxItem Content="Inventory Wet - 96"/>
+                    <ComboBoxItem Content="User Specified"/>
+                </ComboBox>
+                <TextBlock><Run Text="NMOC Concentration (ppmv as hexane):"/></TextBlock>
+                <ComboBox x:Name="comboNMOC" Width="120" SelectionChanged="ComboBox_SelectionChanged" HorizontalAlignment="Left">
+                    <ComboBoxItem Content="CAA - 4,000"/>
+                    <ComboBoxItem Content="Inventory No or Unkown Co-disposal - 600"/>
+                    <ComboBoxItem Content="Inventory Co-disposal - 2,400"/>
+                    <ComboBoxItem Content="User Specified"/>
+                </ComboBox>
+                <TextBlock><Run Text="Methane Content (% by volume):"/></TextBlock>
+                <ComboBox x:Name="comboMethaneContent" Width="120" SelectionChanged="ComboBox_SelectionChanged" HorizontalAlignment="Left">
+                    <ComboBoxItem Content="CAA - 50% by volume"/>
+                    <ComboBoxItem Content="User Specified"/>
+                </ComboBox>
+            </StackPanel>
+        </GroupBox>
+
+    </Grid>
+</Window>

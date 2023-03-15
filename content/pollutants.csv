@@ -1,13 +1,13 @@
 Total landfill gas,,30.03
 Methane,,16.04
 Carbon dioxide,,44.01
-NMOC,"2,400",86.18
-"1,1,1-Trichloroethane (methyl chloroform) - HAP",0.48,133.41
-"1,1,2,2-Tetrachloroethane - HAP/VOC",1.1,167.85
-"1,1-Dichloroethane (ethylidene dichloride) - HAP/VOC",2.4,98.97
-"1,1-Dichloroethene (vinylidene chloride) - HAP/VOC",0.2,96.94
-"1,2-Dichloroethane (ethylene dichloride) - HAP/VOC",0.41,98.96
-"1,2-Dichloropropane (propylene dichloride) - HAP/VOC",0.18,112.99
+NMOC,2400,86.18
+1;1;1-Trichloroethane (methyl chloroform) - HAP,0.48,133.41
+1;1;2;2-Tetrachloroethane - HAP/VOC,1.1,167.85
+1;1-Dichloroethane (ethylidene dichloride) - HAP/VOC,2.4,98.97
+1;1-Dichloroethene (vinylidene chloride) - HAP/VOC,0.2,96.94
+1;2-Dichloroethane (ethylene dichloride) - HAP/VOC,0.41,98.96
+1;2-Dichloropropane (propylene dichloride) - HAP/VOC,0.18,112.99
 2-Propanol (isopropyl alcohol) - VOC,50,60.11
 Acetone,7,58.08
 Acrylonitrile - HAP/VOC,6.3,53.06
@@ -44,7 +44,7 @@ Methyl mercaptan - VOC,2.5,48.11
 Pentane - VOC,3.3,72.15
 Perchloroethylene (tetrachloroethylene) - HAP,3.7,165.83
 Propane - VOC,11,44.09
-"t-1,2-Dichloroethene - VOC",2.8,96.94
+t-1;2-Dichloroethene - VOC,2.8,96.94
 Toluene - No or Unknown Co-disposal - HAP/VOC,39,92.13
 Toluene - Co-disposal - HAP/VOC,170,92.13
 Trichloroethylene (trichloroethene) - HAP/VOC,2.8,131.4

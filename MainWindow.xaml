@@ -96,7 +96,7 @@
         <GroupBox Header="4. ENTER WASTE ACCEPTANCE RATES" Margin="576,0,10,17">
             <DataGrid x:Name="dataInput" Height="654" HeadersVisibility="Column" >
                 <DataGrid.Columns>
-                    <DataGridTextColumn CanUserResize="True" CanUserSort="False" CanUserReorder="False" Header="Year" IsReadOnly="True"/>
+                    <DataGridTextColumn CanUserResize="False" CanUserSort="False" CanUserReorder="False" Header="Year" IsReadOnly="True"/>
                     <DataGridTextColumn CanUserResize="False" CanUserSort="False" CanUserReorder="False" Header="Input Units"/>
                     <DataGridTextColumn CanUserResize="False" CanUserSort="False" CanUserReorder="False" Header="Calculated Units" IsReadOnly="True"/>
                 </DataGrid.Columns>

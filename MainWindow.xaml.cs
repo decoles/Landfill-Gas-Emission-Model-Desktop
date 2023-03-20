@@ -75,13 +75,14 @@ namespace lwrncLandgemWPF
             int startingYear = 0;
             int closingYear = 0;
             ((DataGridTextColumn)dataInput.Columns[0]).Binding = new Binding("year");
-            ((DataGridTextColumn)dataInput.Columns[1]).Binding = new Binding("inputUnits");
-            ((DataGridTextColumn)dataInput.Columns[2]).Binding = new Binding("calculatedUnits");
+          //  ((DataGridTextColumn)dataInput.Columns[1]).Binding = new Binding("inputUnits");
+           // ((DataGridTextColumn)dataInput.Columns[2]).Binding = new Binding("calculatedUnits");
 
             startingYear = int.Parse(txtOpenYear.Text);
             closingYear = int.Parse(txtCloseYear.Text);
             int differnce = closingYear - startingYear;
-            for (int i = startingYear; i < differnce + closingYear; i++)
+
+            for (int i = startingYear; i < closingYear+1; i++)
             {
                 dataInput.Items.Add(new Item() { year = i});
             }
@@ -197,6 +198,11 @@ namespace lwrncLandgemWPF
                     txtMethContent.Visibility = Visibility.Visible;
                 }
             }
+        }
+
+        private void dataInput_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            MessageBox.Show("test");
         }
     }
 }

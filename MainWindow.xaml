@@ -40,35 +40,57 @@
         <GroupBox Header="2. DETERMINE MODEL PARAMETERS" Margin="0,214,518,254">
             <StackPanel Height="447">
                 <TextBlock Height="15"><Run Text="Methane Generation Rate, k (year^-1)"/><LineBreak/><Run/></TextBlock>
-                <ComboBox x:Name="comboMethanGen" Width="240" HorizontalAlignment="Left">
-                    <ComboBoxItem Content="CAA Arid Area - 0.02"/>
-                    <ComboBoxItem Content="CAA Convetntional - 0.05"/>
-                    <ComboBoxItem Content="Inventory Conventional - 0.04"/>
-                    <ComboBoxItem Content="Inventory Arid Area - 0.02"/>
-                    <ComboBoxItem Content="Inventory Wet - 0.7"/>
-                    <ComboBoxItem Content="User Specified"/>
-                </ComboBox>
+                <StackPanel Orientation="Horizontal">
+                    <ComboBox x:Name="comboMethanGen" Width="240" HorizontalAlignment="Left" SelectionChanged="comboMethanGen_SelectionChanged">
+                        <ComboBoxItem Content="CAA Arid Area - 0.02" Tag="0.02"/>
+                        <ComboBoxItem Content="CAA Convetntional - 0.05" Tag="0.05"/>
+                        <ComboBoxItem Content="Inventory Conventional - 0.04" Tag="0.04"/>
+                        <ComboBoxItem Content="Inventory Arid Area - 0.02" Tag="0.02"/>
+                        <ComboBoxItem Content="Inventory Wet - 0.7" Tag="0.7"/>
+                        <ComboBoxItem Content="User Specified"/>
+                    </ComboBox>
+                    <Label x:Name="lblMethaneGen" Content="User-Specified Value:" Width="146" Visibility="Hidden"/>
+                    <TextBox x:Name="txtMethGen" TextWrapping="Wrap" Text="TextBox" Width="120" Visibility="Hidden"/>
+
+                </StackPanel>
                 <TextBlock><Run Text="Potential Methane Geneartion Capacity, L0 (m^3/Mg):"/></TextBlock>
-                <ComboBox x:Name="comboPotentialGen" Width="240"  HorizontalAlignment="Left">
-                    <ComboBoxItem Content="CAA Arid Area - 170"/>
-                    <ComboBoxItem Content="CAA Convetntional - 170"/>
-                    <ComboBoxItem Content="Inventory Conventional - 100"/>
-                    <ComboBoxItem Content="Inventory Arid Area - 100"/>
-                    <ComboBoxItem Content="Inventory Wet - 96"/>
-                    <ComboBoxItem Content="User Specified"/>
-                </ComboBox>
+                <StackPanel Orientation="Horizontal">
+                    <ComboBox x:Name="comboPotentialGen" Width="240"  HorizontalAlignment="Left" SelectionChanged="comboPotentialGen_SelectionChanged">
+                        <ComboBoxItem Content="CAA Arid Area - 170"/>
+                        <ComboBoxItem Content="CAA Convetntional - 170"/>
+                        <ComboBoxItem Content="Inventory Conventional - 100"/>
+                        <ComboBoxItem Content="Inventory Arid Area - 100"/>
+                        <ComboBoxItem Content="Inventory Wet - 96"/>
+                        <ComboBoxItem Content="User Specified"/>
+                    </ComboBox>
+                    <Label x:Name="lblPotentialMethGen" Content="User-Specified Value:" Width="146" Visibility="Hidden"/>
+                    <TextBox x:Name="txtMethGenCap" TextWrapping="Wrap" Text="TextBox" Width="120" Visibility="Hidden"/>
+                </StackPanel>
+
+
                 <TextBlock><Run Text="NMOC Concentration (ppmv as hexane):"/></TextBlock>
-                <ComboBox x:Name="comboNMOC" Width="240"  HorizontalAlignment="Left">
-                    <ComboBoxItem Content="CAA - 4,000"/>
-                    <ComboBoxItem Content="Inventory No or Unkown Co-disposal - 600"/>
-                    <ComboBoxItem Content="Inventory Co-disposal - 2,400"/>
-                    <ComboBoxItem Content="User Specified"/>
-                </ComboBox>
+                <StackPanel Orientation="Horizontal">
+                    <ComboBox x:Name="comboNMOC" Width="240"  HorizontalAlignment="Left" SelectionChanged="comboNMOC_SelectionChanged">
+                        <ComboBoxItem Content="CAA - 4,000"/>
+                        <ComboBoxItem Content="Inventory No or Unkown Co-disposal - 600"/>
+                        <ComboBoxItem Content="Inventory Co-disposal - 2,400"/>
+                        <ComboBoxItem Content="User Specified"/>
+                    </ComboBox>
+                    <Label x:Name="lblNMOC" Content="User-Specified Value:" Width="146" Visibility="Hidden"/>
+                    <TextBox x:Name="txtNMOC" TextWrapping="Wrap" Text="TextBox" Width="120" Visibility="Hidden"/>
+
+                </StackPanel>
+
                 <TextBlock><Run Text="Methane Content (% by volume):"/></TextBlock>
-                <ComboBox x:Name="comboMethaneContent" Width="240"  HorizontalAlignment="Left">
-                    <ComboBoxItem Content="CAA - 50% by volume"/>
-                    <ComboBoxItem Content="User Specified"/>
-                </ComboBox>
+                <StackPanel Orientation="Horizontal">
+                    <ComboBox x:Name="comboMethaneContent" Width="240"  HorizontalAlignment="Left" SelectionChanged="comboMethaneContent_SelectionChanged">
+                        <ComboBoxItem Content="CAA - 50% by volume"/>
+                        <ComboBoxItem Content="User Specified"/>
+                    </ComboBox>
+                    <Label x:Name="lblMethContent" Content="User-Specified Value:" Width="146" Visibility="Hidden"/>
+                    <TextBox x:Name="txtMethContent" TextWrapping="Wrap" Text="TextBox" Width="120" Visibility="Hidden"/>
+
+                </StackPanel>
             </StackPanel>
         </GroupBox>
         <GroupBox Header="4. ENTER WASTE ACCEPTANCE RATES" Margin="576,0,10,17">

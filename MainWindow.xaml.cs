@@ -42,7 +42,7 @@ namespace lwrncLandgemWPF
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-        if(radioNo.IsChecked == true)
+        if(radioNo.IsChecked == true) //checks if radio button is pressed to cause a switch between the other radio button
             {
                 radioNo.IsChecked = false;
             }
@@ -58,14 +58,16 @@ namespace lwrncLandgemWPF
 
         public void fillDataGrid()
         {
+            dataInput.Items.Clear();
             int startingYear = 0;
             int closingYear = 0;
             startingYear = int.Parse(txtOpenYear.Text);
             closingYear = int.Parse(txtCloseYear.Text);
             int differnce = closingYear - startingYear;
-            for (int i = 0; i < differnce; i++)
+            for (int i = startingYear; i < differnce + closingYear; i++)
             {
 
+                dataInput.Items.Add(i.ToString());
             }
         }
 
@@ -97,7 +99,88 @@ namespace lwrncLandgemWPF
             {
                 fillDataGrid();
             }
+            if(countChar != 4 || countCharClose != 4)
+            {
+                dataInput.Items.Clear();
+            }
 
+        }
+
+        private void comboMethanGen_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(comboMethanGen.SelectedItem != null)
+            {
+                ComboBoxItem comboBoxItem = (ComboBoxItem)comboMethanGen.SelectedItem;
+                string selectedValue = comboBoxItem.Content.ToString();
+                if(selectedValue == "User Specified")
+                {
+                    lblMethaneGen.Visibility = Visibility.Visible;
+                    txtMethGen.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    lblMethaneGen.Visibility = Visibility.Hidden;
+                    txtMethGen.Visibility = Visibility.Visible;
+                }
+            }
+        }
+
+        private void comboPotentialGen_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (comboPotentialGen.SelectedItem != null)
+            {
+                ComboBoxItem comboBoxItem = (ComboBoxItem)comboPotentialGen.SelectedItem;
+                string selectedValue = comboBoxItem.Content.ToString();
+                if (selectedValue == "User Specified")
+                {
+                    lblPotentialMethGen.Visibility = Visibility.Visible;
+                    txtMethGenCap.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    lblPotentialMethGen.Visibility = Visibility.Hidden;
+                    txtMethGenCap.Visibility = Visibility.Visible;
+                }
+            }
+
+        }
+
+        private void comboNMOC_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (comboNMOC.SelectedItem != null)
+            {
+                ComboBoxItem comboBoxItem = (ComboBoxItem)comboNMOC.SelectedItem;
+                string selectedValue = comboBoxItem.Content.ToString();
+                if (selectedValue == "User Specified")
+                {
+                    lblNMOC.Visibility = Visibility.Visible;
+                    txtNMOC.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    lblNMOC.Visibility = Visibility.Hidden;
+                    txtNMOC.Visibility = Visibility.Visible;
+                }
+            }
+        }
+
+        private void comboMethaneContent_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (comboMethaneContent.SelectedItem != null)
+            {
+                ComboBoxItem comboBoxItem = (ComboBoxItem)comboMethaneContent.SelectedItem;
+                string selectedValue = comboBoxItem.Content.ToString();
+                if (selectedValue == "User Specified")
+                {
+                    lblMethContent.Visibility = Visibility.Visible;
+                    txtMethContent.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    lblMethContent.Visibility = Visibility.Hidden;
+                    txtMethContent.Visibility = Visibility.Visible;
+                }
+            }
         }
     }
 }

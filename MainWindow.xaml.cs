@@ -17,6 +17,12 @@ using System.IO;
 
 namespace lwrncLandgemWPF
 {
+    public class test
+    {
+        int year;
+        float first;
+        float second;
+    }
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -56,18 +62,28 @@ namespace lwrncLandgemWPF
             }
         }
 
+        public class Item
+        {
+            public int year { get; set; }
+            public float inputUnits { get; set; }
+            public float calculatedUnits { get; set; }
+        }
+
         public void fillDataGrid()
         {
-            dataInput.Items.Clear();
+
             int startingYear = 0;
             int closingYear = 0;
+            ((DataGridTextColumn)dataInput.Columns[0]).Binding = new Binding("year");
+            ((DataGridTextColumn)dataInput.Columns[1]).Binding = new Binding("inputUnits");
+            ((DataGridTextColumn)dataInput.Columns[2]).Binding = new Binding("calculatedUnits");
+
             startingYear = int.Parse(txtOpenYear.Text);
             closingYear = int.Parse(txtCloseYear.Text);
             int differnce = closingYear - startingYear;
             for (int i = startingYear; i < differnce + closingYear; i++)
             {
-
-                dataInput.Items.Add(i.ToString());
+                dataInput.Items.Add(new Item() { year = i});
             }
         }
 

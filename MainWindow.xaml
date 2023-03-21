@@ -36,6 +36,7 @@
                 <TextBlock><Run Text="Gas/ Pollutant #4"/></TextBlock>
                 <ComboBox x:Name="comboPollutant" Width="270"  HorizontalAlignment="Left"/>
             </StackPanel>
+            
         </GroupBox>
         <GroupBox Header="2. DETERMINE MODEL PARAMETERS" Margin="0,214,518,254">
             <StackPanel Height="447">
@@ -94,14 +95,16 @@
             </StackPanel>
         </GroupBox>
         <GroupBox Header="4. ENTER WASTE ACCEPTANCE RATES" Margin="576,0,10,17">
-            <DataGrid x:Name="dataInput" Height="654" HeadersVisibility="Column" >
+            <DataGrid x:Name="dataInput" AutoGenerateColumns="False" >
                 <DataGrid.Columns>
-                    <DataGridTextColumn CanUserResize="False" CanUserSort="False" CanUserReorder="False" Header="Year" IsReadOnly="True"/>
-                    <DataGridTextColumn CanUserResize="False" CanUserSort="False" CanUserReorder="False" Header="Input Units"/>
-                    <DataGridTextColumn CanUserResize="False" CanUserSort="False" CanUserReorder="False" Header="Calculated Units" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="year" CanUserResize="False" CanUserSort="False" CanUserReorder="False" IsReadOnly="True" Header="Year"/>
+                    <DataGridTextColumn x:Name="inputUnits" CanUserResize="False" CanUserSort="False" CanUserReorder="False" IsReadOnly="False" Header="Input Units"/>
+                    <DataGridTextColumn x:Name="calculatedUnits" CanUserResize="False" CanUserSort="False" CanUserReorder="False" IsReadOnly="True" Header="Calculated Units"/>
                 </DataGrid.Columns>
             </DataGrid>
+
         </GroupBox>
+
 
     </Grid>
 </Window>

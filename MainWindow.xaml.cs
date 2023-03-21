@@ -71,21 +71,24 @@ namespace lwrncLandgemWPF
 
         public void fillDataGrid()
         {
-
+            List<Item> items = new List<Item>();
             int startingYear = 0;
             int closingYear = 0;
-            ((DataGridTextColumn)dataInput.Columns[0]).Binding = new Binding("year");
-          //  ((DataGridTextColumn)dataInput.Columns[1]).Binding = new Binding("inputUnits");
-           // ((DataGridTextColumn)dataInput.Columns[2]).Binding = new Binding("calculatedUnits");
 
             startingYear = int.Parse(txtOpenYear.Text);
             closingYear = int.Parse(txtCloseYear.Text);
-            int differnce = closingYear - startingYear;
 
             for (int i = startingYear; i < closingYear+1; i++)
             {
-                dataInput.Items.Add(new Item() { year = i});
+                //dataInput.Items.Add(new Item() { year = i});
+                items.Add(new Item() { year = i, inputUnits = 0, calculatedUnits = 0 });
             }
+            
+
+            year.Binding = new Binding("year");
+            inputUnits.Binding = new Binding("inputUnits");
+            calculatedUnits.Binding = new Binding("calculatedUnits");
+            dataInput.ItemsSource = items;
         }
 
         private void txtCloseYear_TextChanged(object sender, TextChangedEventArgs e)
@@ -118,7 +121,7 @@ namespace lwrncLandgemWPF
             }
             if(countChar != 4 || countCharClose != 4)
             {
-                dataInput.Items.Clear();
+                //dataInput.Items.Clear();
             }
 
         }
@@ -203,6 +206,11 @@ namespace lwrncLandgemWPF
         private void dataInput_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             MessageBox.Show("test");
+        }
+
+        private void lstAccept_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

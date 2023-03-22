@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Globalization;
 using System.IO;
+using System.ComponentModel;
 
 namespace lwrncLandgemWPF
 {
@@ -203,15 +204,25 @@ namespace lwrncLandgemWPF
             }
         }
 
-        private void dataInput_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void dataInput_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
         {
-            MessageBox.Show("test");
+            string msg = dataInput.CurrentCell.ToString() + dataInput.CurrentColumn.ToString();
+            MessageBox.Show(msg);
+            //MessageBox.Show("PP");
+           // var row = dataInput.Rows[]
+           // if(content != "0")
+          //  {
+
+            //    MessageBox.Show("OK " + content);
+           // }    
         }
 
-        private void lstAccept_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void dataInput_CurrentCellChanged(object sender, EventArgs e)
         {
-
+            //MessageBox.Show("Made change to cell ");
         }
+
+
     }
 }
 

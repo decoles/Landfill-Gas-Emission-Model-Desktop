@@ -95,7 +95,7 @@
             </StackPanel>
         </GroupBox>
         <GroupBox Header="4. ENTER WASTE ACCEPTANCE RATES" Margin="576,0,10,17">
-            <DataGrid x:Name="dataInput" AutoGenerateColumns="False" >
+            <DataGrid x:Name="dataInput" AutoGenerateColumns="False" CellEditEnding="dataInput_CellEditEnding" CurrentCellChanged="dataInput_CurrentCellChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn x:Name="year" CanUserResize="False" CanUserSort="False" CanUserReorder="False" IsReadOnly="True" Header="Year"/>
                     <DataGridTextColumn x:Name="inputUnits" CanUserResize="False" CanUserSort="False" CanUserReorder="False" IsReadOnly="False" Header="Input Units"/>

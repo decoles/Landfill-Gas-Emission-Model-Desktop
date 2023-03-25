@@ -230,10 +230,10 @@ namespace lwrncLandgemWPF
                 if(column != null)
                 {
                     int row = e.Row.GetIndex();
-                    var el = e.EditingElement as TextBox;
+                    var el = e.EditingElement as TextBox; //selected column data
                     double shortOut = double.Parse(el.Text) * 1.1023;
                     //MessageBox.Show("row: " + row.ToString() + " " + el.Text.ToString());
-                    items[row].calculatedUnits = shortOut;
+                    items[row].calculatedUnits = shortOut; //Get the units on a row to have the modified value (from 0)
                     
                     fillDataGrid();
                     //items.Clear();

@@ -16,6 +16,7 @@ using System.Globalization;
 using System.IO;
 using System.ComponentModel;
 using System.Data;
+using System.Collections.ObjectModel;
 
 namespace lwrncLandgemWPF
 {
@@ -24,6 +25,8 @@ namespace lwrncLandgemWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        ObservableCollection<Item> items = new ObservableCollection<Item>(); //public list
+
         public MainWindow()
         {
             InitializeComponent();
@@ -40,6 +43,8 @@ namespace lwrncLandgemWPF
             }
             txtCloseYear.MaxLength = 4;
             txtOpenYear.MaxLength = 4;
+            dataInput.ItemsSource = items;
+
         }
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
@@ -64,7 +69,6 @@ namespace lwrncLandgemWPF
             public double inputUnits { get; set; }
             public double calculatedUnits { get; set; }
         }
-        List<Item> items = new List<Item>(); //public list
         //When both years are 4 digit and valid this will fill the datagrid with those years
         public void fillDataGrid()
         {
@@ -79,17 +83,22 @@ namespace lwrncLandgemWPF
             }
             else
             {
-                for (int i = startingYear; i < closingYear + 1; i++)
+                int listLength = items.Count;
+                if(listLength < 1) //If list is emtpy, to prevent list duplicaiotn
                 {
-                    //dataInput.Items.Add(new Item() { year = i});
-                    items.Add(new Item() { year = i, inputUnits = 0, calculatedUnits = 0 });
+                    for (int i = startingYear; i < closingYear + 1; i++)
+                    {
+                        //dataInput.Items.Add(new Item() { year = i});
+                        items.Add(new Item() { year = i, inputUnits = 0, calculatedUnits = 0 });
+                    }
                 }
+
 
 
                 year.Binding = new Binding("year");
                 inputUnits.Binding = new Binding("inputUnits");
                 calculatedUnits.Binding = new Binding("calculatedUnits");
-                dataInput.ItemsSource = items;
+                
             }
 
 
@@ -225,7 +234,10 @@ namespace lwrncLandgemWPF
                     double shortOut = double.Parse(el.Text) * 1.1023;
                     //MessageBox.Show("row: " + row.ToString() + " " + el.Text.ToString());
                     items[row].calculatedUnits = shortOut;
+                    
                     fillDataGrid();
+                    //items.Clear();
+
                 }
             }
         }

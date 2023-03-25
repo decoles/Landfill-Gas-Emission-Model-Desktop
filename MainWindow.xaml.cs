@@ -15,15 +15,10 @@ using System.Windows.Shapes;
 using System.Globalization;
 using System.IO;
 using System.ComponentModel;
+using System.Data;
 
 namespace lwrncLandgemWPF
 {
-    public class test
-    {
-        int year;
-        float first;
-        float second;
-    }
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -66,30 +61,38 @@ namespace lwrncLandgemWPF
         public class Item
         {
             public int year { get; set; }
-            public float inputUnits { get; set; }
-            public float calculatedUnits { get; set; }
+            public double inputUnits { get; set; }
+            public double calculatedUnits { get; set; }
         }
-
+        List<Item> items = new List<Item>(); //public list
+        //When both years are 4 digit and valid this will fill the datagrid with those years
         public void fillDataGrid()
         {
-            List<Item> items = new List<Item>();
             int startingYear = 0;
             int closingYear = 0;
 
             startingYear = int.Parse(txtOpenYear.Text);
             closingYear = int.Parse(txtCloseYear.Text);
-
-            for (int i = startingYear; i < closingYear+1; i++)
+            if(closingYear <= startingYear)
             {
-                //dataInput.Items.Add(new Item() { year = i});
-                items.Add(new Item() { year = i, inputUnits = 0, calculatedUnits = 0 });
+                MessageBox.Show("Closing Year must be greater than Starting Year");
             }
-            
+            else
+            {
+                for (int i = startingYear; i < closingYear + 1; i++)
+                {
+                    //dataInput.Items.Add(new Item() { year = i});
+                    items.Add(new Item() { year = i, inputUnits = 0, calculatedUnits = 0 });
+                }
 
-            year.Binding = new Binding("year");
-            inputUnits.Binding = new Binding("inputUnits");
-            calculatedUnits.Binding = new Binding("calculatedUnits");
-            dataInput.ItemsSource = items;
+
+                year.Binding = new Binding("year");
+                inputUnits.Binding = new Binding("inputUnits");
+                calculatedUnits.Binding = new Binding("calculatedUnits");
+                dataInput.ItemsSource = items;
+            }
+
+
         }
 
         private void txtCloseYear_TextChanged(object sender, TextChangedEventArgs e)
@@ -126,7 +129,9 @@ namespace lwrncLandgemWPF
             }
 
         }
-
+        /// <summary>
+        ///     These next lines just switch to the user-specified choice under section 2
+        /// </summary>
         private void comboMethanGen_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if(comboMethanGen.SelectedItem != null)
@@ -141,7 +146,7 @@ namespace lwrncLandgemWPF
                 else
                 {
                     lblMethaneGen.Visibility = Visibility.Hidden;
-                    txtMethGen.Visibility = Visibility.Visible;
+                    txtMethGen.Visibility = Visibility.Hidden;
                 }
             }
         }
@@ -160,7 +165,7 @@ namespace lwrncLandgemWPF
                 else
                 {
                     lblPotentialMethGen.Visibility = Visibility.Hidden;
-                    txtMethGenCap.Visibility = Visibility.Visible;
+                    txtMethGenCap.Visibility = Visibility.Hidden;
                 }
             }
 
@@ -180,7 +185,7 @@ namespace lwrncLandgemWPF
                 else
                 {
                     lblNMOC.Visibility = Visibility.Hidden;
-                    txtNMOC.Visibility = Visibility.Visible;
+                    txtNMOC.Visibility = Visibility.Hidden;
                 }
             }
         }
@@ -199,30 +204,31 @@ namespace lwrncLandgemWPF
                 else
                 {
                     lblMethContent.Visibility = Visibility.Hidden;
-                    txtMethContent.Visibility = Visibility.Visible;
+                    txtMethContent.Visibility = Visibility.Hidden;
                 }
             }
         }
 
+        /// <summary>
+        ///     END SECTION 2
+        /// </summary>
+        
         private void dataInput_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
         {
-            string msg = dataInput.CurrentCell.ToString() + dataInput.CurrentColumn.ToString();
-            MessageBox.Show(msg);
-            //MessageBox.Show("PP");
-           // var row = dataInput.Rows[]
-           // if(content != "0")
-          //  {
-
-            //    MessageBox.Show("OK " + content);
-           // }    
+           if(e.EditAction == DataGridEditAction.Commit)
+            {
+                var column = e.Column as DataGridBoundColumn;
+                if(column != null)
+                {
+                    int row = e.Row.GetIndex();
+                    var el = e.EditingElement as TextBox;
+                    double shortOut = double.Parse(el.Text) * 1.1023;
+                    //MessageBox.Show("row: " + row.ToString() + " " + el.Text.ToString());
+                    items[row].calculatedUnits = shortOut;
+                    fillDataGrid();
+                }
+            }
         }
-
-        private void dataInput_CurrentCellChanged(object sender, EventArgs e)
-        {
-            //MessageBox.Show("Made change to cell ");
-        }
-
-
     }
 }
 

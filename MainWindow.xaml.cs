@@ -93,15 +93,10 @@ namespace lwrncLandgemWPF
                     }
                 }
 
-
-
                 year.Binding = new Binding("year");
                 inputUnits.Binding = new Binding("inputUnits");
-                calculatedUnits.Binding = new Binding("calculatedUnits");
-                
+                calculatedUnits.Binding = new Binding("calculatedUnits"); 
             }
-
-
         }
 
         private void txtCloseYear_TextChanged(object sender, TextChangedEventArgs e)

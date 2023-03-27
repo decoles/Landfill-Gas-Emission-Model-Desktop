@@ -51,6 +51,8 @@ namespace lwrncLandgemWPF
         if(radioNo.IsChecked == true) //checks if radio button is pressed to cause a switch between the other radio button
             {
                 radioNo.IsChecked = false;
+                txtCloseYear.Clear();
+                txtCloseYear.IsEnabled = false;
             }
         }
 
@@ -59,6 +61,7 @@ namespace lwrncLandgemWPF
             if(radioYes.IsChecked == true)
             {
                 radioYes.IsChecked = false;
+                txtCloseYear.IsEnabled=true;
             }
         }
 
@@ -221,16 +224,24 @@ namespace lwrncLandgemWPF
                 {
                     int row = e.Row.GetIndex();
                     var el = e.EditingElement as TextBox; //selected column data
-                    double shortOut = double.Parse(el.Text) * 1.10001;
+                    double shortOut = double.Parse(el.Text) * 1.10001; //retrieve column data
                     int roundedShortOut = Convert.ToInt32(shortOut);
                     //MessageBox.Show("row: " + row.ToString() + " " + el.Text.ToString());
                     items[row].calculatedUnits = roundedShortOut; //Get the units on a row to have the modified value (from 0)
                     
                     fillDataGrid();
-                    //items.Clear();
-
                 }
             }
+        }
+
+        private void btnClearAll_Click(object sender, RoutedEventArgs e)
+        {
+            //CONFIRM HERE TODO
+            items.Clear();
+            txtCloseYear.Clear();
+            txtOpenYear.Clear();
+            radioNo.IsChecked = true;
+            radioYes.IsChecked = false;
         }
     }
 }

@@ -23,8 +23,8 @@
                 </ComboBox>
             </StackPanel>
         </GroupBox>
-        <GroupBox Header="3. SELECT GASES/POLLUTANTS" Margin="0,430,518,17">
-            <StackPanel Height="226">
+        <GroupBox Header="3. SELECT GASES/POLLUTANTS" Margin="0,430,518,68">
+            <StackPanel Height="196">
                 <TextBlock><Run Text="Gas/ Pollutant #1"/></TextBlock>
                 <ComboBox x:Name="comboPollutant1" Width="270" HorizontalAlignment="Left"/>
                 <TextBlock><Run Text="Gas/ Pollutant #2"/></TextBlock>
@@ -36,7 +36,7 @@
                 <TextBlock><Run Text="Gas/ Pollutant #4"/></TextBlock>
                 <ComboBox x:Name="comboPollutant" Width="270"  HorizontalAlignment="Left"/>
             </StackPanel>
-            
+
         </GroupBox>
         <GroupBox Header="2. DETERMINE MODEL PARAMETERS" Margin="0,214,518,254">
             <StackPanel Height="447">
@@ -94,8 +94,8 @@
                 </StackPanel>
             </StackPanel>
         </GroupBox>
-        <GroupBox Header="4. ENTER WASTE ACCEPTANCE RATES" Margin="576,0,10,17">
-            <DataGrid x:Name="dataInput" AutoGenerateColumns="False" CellEditEnding="dataInput_CellEditEnding" CanUserAddRows="False" >
+        <GroupBox Header="4. ENTER WASTE ACCEPTANCE RATES" Margin="777,0,10,145">
+            <DataGrid x:Name="dataInput" AutoGenerateColumns="False" CellEditEnding="dataInput_CellEditEnding" CanUserAddRows="False" Height="530" Margin="10,0,0,0" >
                 <DataGrid.Columns>
                     <DataGridTextColumn x:Name="year" CanUserResize="False" CanUserSort="False" CanUserReorder="False" IsReadOnly="True" Header="Year"/>
                     <DataGridTextColumn x:Name="inputUnits" CanUserResize="False" CanUserSort="False" CanUserReorder="False" IsReadOnly="False" Header="Input Units"/>
@@ -104,6 +104,8 @@
             </DataGrid>
 
         </GroupBox>
+        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="924,593,0,0" VerticalAlignment="Top" Height="38" Width="118"/>
+        <Button x:Name="btnClearAll" Content="Clear all" HorizontalAlignment="Left" Margin="777,593,0,0" VerticalAlignment="Top" Height="38" Width="118" Click="btnClearAll_Click"/>
 
 
     </Grid>

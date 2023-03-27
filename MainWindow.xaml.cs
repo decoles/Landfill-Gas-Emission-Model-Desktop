@@ -231,9 +231,10 @@ namespace lwrncLandgemWPF
                 {
                     int row = e.Row.GetIndex();
                     var el = e.EditingElement as TextBox; //selected column data
-                    double shortOut = double.Parse(el.Text) * 1.1023;
+                    double shortOut = double.Parse(el.Text) * 1.10001;
+                    int roundedShortOut = Convert.ToInt32(shortOut);
                     //MessageBox.Show("row: " + row.ToString() + " " + el.Text.ToString());
-                    items[row].calculatedUnits = shortOut; //Get the units on a row to have the modified value (from 0)
+                    items[row].calculatedUnits = roundedShortOut; //Get the units on a row to have the modified value (from 0)
                     
                     fillDataGrid();
                     //items.Clear();

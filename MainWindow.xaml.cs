@@ -63,12 +63,7 @@ namespace lwrncLandgemWPF
             }
         }
 
-        public class Item
-        {
-            public int year { get; set; }
-            public double inputUnits { get; set; }
-            public double calculatedUnits { get; set; }
-        }
+
         //When both years are 4 digit and valid this will fill the datagrid with those years
         public void fillDataGrid()
         {

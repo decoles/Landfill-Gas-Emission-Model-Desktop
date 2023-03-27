@@ -222,6 +222,10 @@ namespace lwrncLandgemWPF
         ///     END SECTION 2
         /// </summary>
         
+
+
+        /////////////////////////MAKE STARTING SCREEN WHERE USER CAN PICK BETWEEN INSERTING FROM CSV OR INSERTING BY HAND
+
         private void dataInput_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
         {
            if(e.EditAction == DataGridEditAction.Commit)

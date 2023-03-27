@@ -20,9 +20,6 @@ using System.Collections.ObjectModel;
 
 namespace lwrncLandgemWPF
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         ObservableCollection<Item> items = new ObservableCollection<Item>(); //public list
@@ -35,6 +32,7 @@ namespace lwrncLandgemWPF
             foreach ( var line in lines)
             {
                 var tokens = line.Split(',');
+                //Update combo box to have all items from pollutants csv
                 comboPollutant.Items.Add(tokens[0]);
                 comboPollutant1.Items.Add(tokens[0]);
                 comboPollutant2.Items.Add(tokens[0]);
@@ -42,11 +40,12 @@ namespace lwrncLandgemWPF
 
             }
             txtCloseYear.MaxLength = 4;
-            txtOpenYear.MaxLength = 4;
+            txtOpenYear.MaxLength = 4; //only allow 4 digits for a given year
             dataInput.ItemsSource = items;
 
         }
 
+        //Two following functions just make the radio button switch between to options as we can only select one
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
         if(radioNo.IsChecked == true) //checks if radio button is pressed to cause a switch between the other radio button
@@ -207,13 +206,10 @@ namespace lwrncLandgemWPF
                 }
             }
         }
-
         /// <summary>
         ///     END SECTION 2
         /// </summary>
-        
-
-
+     
         /////////////////////////MAKE STARTING SCREEN WHERE USER CAN PICK BETWEEN INSERTING FROM CSV OR INSERTING BY HAND
 
         private void dataInput_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)

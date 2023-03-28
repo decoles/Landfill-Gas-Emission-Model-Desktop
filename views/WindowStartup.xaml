@@ -7,17 +7,16 @@
         mc:Ignorable="d"
         Title="startup" Height="450" Width="800">
     <Grid>
-        <TextBox HorizontalAlignment="Left" Margin="61,26,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="213" Height="44"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="320,30,0,0" VerticalAlignment="Top"/>
-        <ListView d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,172,564,10">
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Margin="61,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="213" Height="44"/>
+        <ListView Margin="10,172,564,10">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="408,236,0,0" VerticalAlignment="Top" Height="39" Width="200"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="408,328,0,0" VerticalAlignment="Top" Height="39" Width="200"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="408,30,0,0" VerticalAlignment="Top" Height="39" Width="200"/>
+        <Button x:Name="btnCreateInput" Content="View Report Output" HorizontalAlignment="Left" Margin="408,236,0,0" VerticalAlignment="Top" Height="39" Width="200"/>
+        <Button x:Name="btnViewResults" Content="New Report With Existing Data" HorizontalAlignment="Left" Margin="408,328,0,0" VerticalAlignment="Top" Height="39" Width="200"/>
+        <Button x:Name="btnCreateNew" Content="Create New Report" HorizontalAlignment="Left" Margin="408,30,0,0" VerticalAlignment="Top" Height="39" Width="200" Click="Button_Click"/>
     </Grid>
 </Window>

@@ -48,12 +48,13 @@ namespace lwrncLandgemWPF
         //Two following functions just make the radio button switch between to options as we can only select one
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-        if(radioNo.IsChecked == true) //checks if radio button is pressed to cause a switch between the other radio button
+            if(radioNo.IsChecked == true) //checks if radio button is pressed to cause a switch between the other radio button
             {
                 radioNo.IsChecked = false;
-                txtCloseYear.Clear();
-                txtCloseYear.IsEnabled = false;
             }
+            //txtCloseYear.Opacity = 50;
+            txtCloseYear.IsEnabled = false;
+
         }
 
         private void radioNo_Checked(object sender, RoutedEventArgs e)
@@ -61,8 +62,9 @@ namespace lwrncLandgemWPF
             if(radioYes.IsChecked == true)
             {
                 radioYes.IsChecked = false;
-                txtCloseYear.IsEnabled=true;
             }
+            txtCloseYear.IsEnabled = true;
+
         }
 
 
@@ -242,6 +244,11 @@ namespace lwrncLandgemWPF
             txtOpenYear.Clear();
             radioNo.IsChecked = true;
             radioYes.IsChecked = false;
+        }
+
+        private void btnClearParameters_Copy_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

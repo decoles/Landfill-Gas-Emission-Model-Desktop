@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LandGEMWPF.objects;
+using lwrncLandgemWPF;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +24,17 @@ namespace LandGEMWPF
         public startup()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if(txtName.Text != "")
+            {
+                Global.globalCurrentDataSheet = txtName.Text;
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                Close();
+            }
         }
     }
 }

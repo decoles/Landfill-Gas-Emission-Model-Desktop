@@ -17,6 +17,7 @@ using System.IO;
 using System.ComponentModel;
 using System.Data;
 using System.Collections.ObjectModel;
+using LandGEMWPF.objects;
 
 namespace lwrncLandgemWPF
 {
@@ -42,6 +43,7 @@ namespace lwrncLandgemWPF
             txtCloseYear.MaxLength = 4;
             txtOpenYear.MaxLength = 4; //only allow 4 digits for a given year
             dataInput.ItemsSource = items;
+            radioNo.IsChecked = true;
 
         }
 
@@ -132,6 +134,18 @@ namespace lwrncLandgemWPF
             }
 
         }
+
+        private void hideUserSpecifiedSecTwo()
+        {
+            lblMethaneGen.Visibility = Visibility.Hidden;
+            txtMethGen.Visibility = Visibility.Hidden;
+            lblPotentialMethGen.Visibility = Visibility.Hidden;
+            txtMethGenCap.Visibility = Visibility.Hidden;
+            lblNMOC.Visibility = Visibility.Hidden;
+            txtNMOC.Visibility = Visibility.Hidden;
+            lblMethContent.Visibility = Visibility.Hidden;
+            txtMethContent.Visibility = Visibility.Hidden;
+        }
         /// <summary>
         ///     These next lines just switch to the user-specified choice under section 2
         /// </summary>
@@ -148,8 +162,8 @@ namespace lwrncLandgemWPF
                 }
                 else
                 {
-                    lblMethaneGen.Visibility = Visibility.Hidden;
-                    txtMethGen.Visibility = Visibility.Hidden;
+                    //lblMethaneGen.Visibility = Visibility.Hidden;
+                    //txtMethGen.Visibility = Visibility.Hidden;
                 }
             }
         }
@@ -167,8 +181,8 @@ namespace lwrncLandgemWPF
                 }
                 else
                 {
-                    lblPotentialMethGen.Visibility = Visibility.Hidden;
-                    txtMethGenCap.Visibility = Visibility.Hidden;
+                    //lblPotentialMethGen.Visibility = Visibility.Hidden;
+                    //txtMethGenCap.Visibility = Visibility.Hidden;
                 }
             }
 
@@ -187,8 +201,8 @@ namespace lwrncLandgemWPF
                 }
                 else
                 {
-                    lblNMOC.Visibility = Visibility.Hidden;
-                    txtNMOC.Visibility = Visibility.Hidden;
+                    //lblNMOC.Visibility = Visibility.Hidden;
+                   // txtNMOC.Visibility = Visibility.Hidden;
                 }
             }
         }
@@ -206,8 +220,8 @@ namespace lwrncLandgemWPF
                 }
                 else
                 {
-                    lblMethContent.Visibility = Visibility.Hidden;
-                    txtMethContent.Visibility = Visibility.Hidden;
+                    //lblMethContent.Visibility = Visibility.Hidden;
+                   // txtMethContent.Visibility = Visibility.Hidden;
                 }
             }
         }
@@ -236,20 +250,30 @@ namespace lwrncLandgemWPF
             }
         }
 
-        private void btnClearAll_Click(object sender, RoutedEventArgs e)
+        private void btnTest_Click(object sender, RoutedEventArgs e)
         {
-            //CONFIRM HERE TODO
-            items.Clear();
+            MessageBox.Show(Global.globalCurrentDataSheet.ToString());
+        }
+
+        private void btnClearParameters_Click(object sender, RoutedEventArgs e)
+        {
             txtCloseYear.Clear();
             txtOpenYear.Clear();
+            items.Clear();
             radioNo.IsChecked = true;
             radioYes.IsChecked = false;
         }
 
-        private void btnClearParameters_Copy_Click(object sender, RoutedEventArgs e)
+        private void RestoreModelDefault(object sender, RoutedEventArgs e)
         {
-
+            comboMethanGen.SelectedIndex = 1; //1 0 0
+            comboPotentialGen.SelectedIndex = 1;
+            comboNMOC.SelectedIndex = 0;
+            comboMethaneContent.SelectedIndex = 0;
+            hideUserSpecifiedSecTwo();
         }
+
+
     }
 }
 

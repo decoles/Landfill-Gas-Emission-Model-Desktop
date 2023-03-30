@@ -31,15 +31,15 @@
         <GroupBox Header="3. SELECT GASES/POLLUTANTS" Margin="0,430,518,9" Grid.RowSpan="2">
             <StackPanel Height="196">
                 <TextBlock><Run Text="Gas/ Pollutant #1"/></TextBlock>
-                <ComboBox x:Name="comboPollutant1" Width="270" HorizontalAlignment="Left"/>
+                <ComboBox x:Name="comboPollutant1" Width="270" HorizontalAlignment="Left" SelectedIndex="0"/>
                 <TextBlock><Run Text="Gas/ Pollutant #2"/></TextBlock>
-                <ComboBox x:Name="comboPollutant2" Width="270" HorizontalAlignment="Left">
+                <ComboBox x:Name="comboPollutant2" Width="270" HorizontalAlignment="Left" SelectedIndex="1">
                 </ComboBox>
                 <TextBlock><Run Text="Gas/ Pollutant #3"/></TextBlock>
-                <ComboBox x:Name="comboPollutant3" Width="270"  HorizontalAlignment="Left">
+                <ComboBox x:Name="comboPollutant3" Width="270"  HorizontalAlignment="Left" SelectedIndex="2">
                 </ComboBox>
                 <TextBlock><Run Text="Gas/ Pollutant #4"/></TextBlock>
-                <ComboBox x:Name="comboPollutant" Width="270"  HorizontalAlignment="Left"/>
+                <ComboBox x:Name="comboPollutant" Width="270"  HorizontalAlignment="Left" SelectedIndex="3"/>
             </StackPanel>
 
         </GroupBox>
@@ -47,7 +47,7 @@
             <StackPanel Height="447">
                 <TextBlock Height="15"><Run Text="Methane Generation Rate, k (year^-1)"/><LineBreak/><Run/></TextBlock>
                 <StackPanel Orientation="Horizontal">
-                    <ComboBox x:Name="comboMethanGen" Width="240" HorizontalAlignment="Left" SelectionChanged="comboMethanGen_SelectionChanged">
+                    <ComboBox x:Name="comboMethanGen" Width="240" HorizontalAlignment="Left" SelectionChanged="comboMethanGen_SelectionChanged" SelectedIndex="1">
                         <ComboBoxItem Content="CAA Arid Area - 0.02" Tag="0.02"/>
                         <ComboBoxItem Content="CAA Convetntional - 0.05" Tag="0.05"/>
                         <ComboBoxItem Content="Inventory Conventional - 0.04" Tag="0.04"/>
@@ -61,7 +61,7 @@
                 </StackPanel>
                 <TextBlock><Run Text="Potential Methane Geneartion Capacity, L0 (m^3/Mg):"/></TextBlock>
                 <StackPanel Orientation="Horizontal">
-                    <ComboBox x:Name="comboPotentialGen" Width="240"  HorizontalAlignment="Left" SelectionChanged="comboPotentialGen_SelectionChanged">
+                    <ComboBox x:Name="comboPotentialGen" Width="240"  HorizontalAlignment="Left" SelectionChanged="comboPotentialGen_SelectionChanged" SelectedIndex="1">
                         <ComboBoxItem Content="CAA Arid Area - 170"/>
                         <ComboBoxItem Content="CAA Convetntional - 170"/>
                         <ComboBoxItem Content="Inventory Conventional - 100"/>
@@ -76,7 +76,7 @@
 
                 <TextBlock><Run Text="NMOC Concentration (ppmv as hexane):"/></TextBlock>
                 <StackPanel Orientation="Horizontal">
-                    <ComboBox x:Name="comboNMOC" Width="240"  HorizontalAlignment="Left" SelectionChanged="comboNMOC_SelectionChanged">
+                    <ComboBox x:Name="comboNMOC" Width="240"  HorizontalAlignment="Left" SelectionChanged="comboNMOC_SelectionChanged" SelectedIndex="0">
                         <ComboBoxItem Content="CAA - 4,000"/>
                         <ComboBoxItem Content="Inventory No or Unkown Co-disposal - 600"/>
                         <ComboBoxItem Content="Inventory Co-disposal - 2,400"/>
@@ -89,7 +89,7 @@
 
                 <TextBlock><Run Text="Methane Content (% by volume):"/></TextBlock>
                 <StackPanel Orientation="Horizontal">
-                    <ComboBox x:Name="comboMethaneContent" Width="240"  HorizontalAlignment="Left" SelectionChanged="comboMethaneContent_SelectionChanged">
+                    <ComboBox x:Name="comboMethaneContent" Width="240"  HorizontalAlignment="Left" SelectionChanged="comboMethaneContent_SelectionChanged" SelectedIndex="0">
                         <ComboBoxItem Content="CAA - 50% by volume"/>
                         <ComboBoxItem Content="User Specified"/>
                     </ComboBox>
@@ -110,11 +110,11 @@
 
         </GroupBox>
         <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="924,593,0,0" VerticalAlignment="Top" Height="38" Width="118" Grid.RowSpan="2"/>
-        <Button x:Name="btnClearAll" Content="Clear all" HorizontalAlignment="Left" Margin="777,593,0,0" VerticalAlignment="Top" Height="38" Width="118" Click="btnClearAll_Click" Grid.RowSpan="2"/>
-        <Button x:Name="btnClearParameters" Content="Clear ALL Non-Parameter Inputs/Selections" Margin="591,107,301,483"/>
-        <Button x:Name="btnRestoreDefault" Content="Restore Default Parameters" Margin="591,320,301,270" Click="btnClearParameters_Copy_Click"/>
-        <Button x:Name="btnAddOrEdit" Content="Edit Existing or Add New Pollutant Parameters" Margin="591,496,301,94" Click="btnClearParameters_Copy_Click"/>
-        <Button x:Name="btnAddOrEditRestore" Content="Restore Default Pollutant Parameters" Margin="591,558,301,32" Click="btnClearParameters_Copy_Click"/>
+        <Button x:Name="btnClearParameters" Content="Clear ALL Non-Parameter Inputs/Selections" Margin="591,107,301,483" Click="btnClearParameters_Click"/>
+        <Button x:Name="btnRestoreModelDefault" Content="Restore Default Model Parameters" Margin="591,320,301,270" Click="RestoreModelDefault"/>
+        <Button x:Name="btnAddOrEdit" Content="Edit Existing or Add New Pollutant Parameters" Margin="591,496,301,94"/>
+        <Button x:Name="btnAddOrEditRestore" Content="Restore Default Pollutant Parameters" Margin="591,558,301,32"/>
+        <Button x:Name="btnTest" Content="TEST" Margin="591,222,301,368" Click="btnTest_Click"/>
 
 
     </Grid>

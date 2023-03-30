@@ -8,7 +8,7 @@ namespace LandGEMWPF.objects
 {
     public static class Global
     {
-        //Used for handling currently logged in user
+        //Used for handling currently logged file name
         public static string globalCurrentDataSheet = "";
     }
 }

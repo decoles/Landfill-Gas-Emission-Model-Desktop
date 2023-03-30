@@ -44,6 +44,10 @@ namespace lwrncLandgemWPF
             txtOpenYear.MaxLength = 4; //only allow 4 digits for a given year
             dataInput.ItemsSource = items;
             radioNo.IsChecked = true;
+            comboPotentialGen.SelectedIndex = 1;
+            comboMethanGen.SelectedIndex = 1;
+            comboNMOC.SelectedIndex = 0;
+            comboMethaneContent.SelectedIndex = 0;
 
         }
 
@@ -162,8 +166,8 @@ namespace lwrncLandgemWPF
                 }
                 else
                 {
-                    //lblMethaneGen.Visibility = Visibility.Hidden;
-                    //txtMethGen.Visibility = Visibility.Hidden;
+                    lblMethaneGen.Visibility = Visibility.Hidden;
+                    txtMethGen.Visibility = Visibility.Hidden;
                 }
             }
         }
@@ -181,8 +185,8 @@ namespace lwrncLandgemWPF
                 }
                 else
                 {
-                    //lblPotentialMethGen.Visibility = Visibility.Hidden;
-                    //txtMethGenCap.Visibility = Visibility.Hidden;
+                    lblPotentialMethGen.Visibility = Visibility.Hidden;
+                    txtMethGenCap.Visibility = Visibility.Hidden;
                 }
             }
 
@@ -201,8 +205,8 @@ namespace lwrncLandgemWPF
                 }
                 else
                 {
-                    //lblNMOC.Visibility = Visibility.Hidden;
-                   // txtNMOC.Visibility = Visibility.Hidden;
+                    lblNMOC.Visibility = Visibility.Hidden;
+                    txtNMOC.Visibility = Visibility.Hidden;
                 }
             }
         }
@@ -220,8 +224,8 @@ namespace lwrncLandgemWPF
                 }
                 else
                 {
-                    //lblMethContent.Visibility = Visibility.Hidden;
-                   // txtMethContent.Visibility = Visibility.Hidden;
+                    lblMethContent.Visibility = Visibility.Hidden;
+                    txtMethContent.Visibility = Visibility.Hidden;
                 }
             }
         }

@@ -9,6 +9,6 @@
       Title="pageResults">
 
     <Grid>
-        
+        <Label Content="Label" HorizontalAlignment="Left" Margin="31,16,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>

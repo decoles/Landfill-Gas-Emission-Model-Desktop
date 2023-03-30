@@ -109,7 +109,7 @@
             </DataGrid>
 
         </GroupBox>
-        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="924,593,0,0" VerticalAlignment="Top" Height="38" Width="118" Grid.RowSpan="2"/>
+        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="924,593,0,0" VerticalAlignment="Top" Height="38" Width="118" Grid.RowSpan="2" Click="btnSubmit_Click"/>
         <Button x:Name="btnClearParameters" Content="Clear ALL Non-Parameter Inputs/Selections" Margin="591,107,301,483" Click="btnClearParameters_Click"/>
         <Button x:Name="btnRestoreModelDefault" Content="Restore Default Model Parameters" Margin="591,320,301,270" Click="RestoreModelDefault"/>
         <Button x:Name="btnAddOrEdit" Content="Edit Existing or Add New Pollutant Parameters" Margin="591,496,301,94"/>

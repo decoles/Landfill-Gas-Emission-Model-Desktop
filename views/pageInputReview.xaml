@@ -9,6 +9,7 @@
       Title="InputReview">
 
     <Grid>
-        
+        <Label Content="Input Review" HorizontalAlignment="Left" Margin="31,16,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Page>

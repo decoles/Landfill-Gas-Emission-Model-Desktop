@@ -18,6 +18,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Collections.ObjectModel;
 using LandGEMWPF.objects;
+using LandGEMWPF.views;
 
 namespace lwrncLandgemWPF
 {
@@ -277,7 +278,11 @@ namespace lwrncLandgemWPF
             hideUserSpecifiedSecTwo();
         }
 
-
+        private void btnSubmit_Click(object sender, RoutedEventArgs e)
+        {
+            InputReview inputReview = new InputReview();
+            Content = inputReview;
+        }
     }
 }
 

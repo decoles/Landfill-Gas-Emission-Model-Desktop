@@ -30,7 +30,7 @@ namespace LandGEMWPF
         {
             if(txtName.Text != "")
             {
-                Global.globalCurrentDataSheet = txtName.Text;
+                GlobalVariables.globalCurrentDataSheet = txtName.Text;
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
                 Close();

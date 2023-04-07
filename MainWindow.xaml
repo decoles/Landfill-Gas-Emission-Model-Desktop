@@ -7,12 +7,16 @@
         mc:Ignorable="d"
         Title="Home" Height="666" Width="1080">
     <Grid Background="#FFBFBFBF">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="37*"/>
+            <ColumnDefinition Width="83*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="629*"/>
             <RowDefinition Height="20*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <GroupBox Header="1. PROVIDE LANDFILL CHARACTERISITCS" Margin="0,0,518,415">
+        <GroupBox Header="1. PROVIDE LANDFILL CHARACTERISITCS" Margin="0,0,518,415" Grid.ColumnSpan="2">
             <StackPanel Height="447">
                 <TextBlock>Landfill Open Year:</TextBlock>
                 <TextBox x:Name="txtOpenYear" Width="106" HorizontalAlignment="Left" TextChanged="txtOpenYear_TextChanged" />
@@ -28,7 +32,7 @@
                 </ComboBox>
             </StackPanel>
         </GroupBox>
-        <GroupBox Header="3. SELECT GASES/POLLUTANTS" Margin="0,430,518,9" Grid.RowSpan="2">
+        <GroupBox Header="3. SELECT GASES/POLLUTANTS" Margin="0,430,518,9" Grid.RowSpan="2" Grid.ColumnSpan="2">
             <StackPanel Height="196">
                 <TextBlock><Run Text="Gas/ Pollutant #1"/></TextBlock>
                 <ComboBox x:Name="comboPollutant1" Width="270" HorizontalAlignment="Left" SelectedIndex="0"/>
@@ -43,7 +47,7 @@
             </StackPanel>
 
         </GroupBox>
-        <GroupBox Header="2. DETERMINE MODEL PARAMETERS" Margin="0,214,518,204">
+        <GroupBox Header="2. DETERMINE MODEL PARAMETERS" Margin="0,214,518,204" Grid.ColumnSpan="2">
             <StackPanel Height="447">
                 <TextBlock Height="15"><Run Text="Methane Generation Rate, k (year^-1)"/><LineBreak/><Run/></TextBlock>
                 <StackPanel Orientation="Horizontal">
@@ -99,7 +103,7 @@
                 </StackPanel>
             </StackPanel>
         </GroupBox>
-        <GroupBox Header="4. ENTER WASTE ACCEPTANCE RATES" Margin="826,0,10,47">
+        <GroupBox Header="4. ENTER WASTE ACCEPTANCE RATES" Margin="493,0,10,47" Grid.Column="1">
             <DataGrid x:Name="dataInput" AutoGenerateColumns="False" CellEditEnding="dataInput_CellEditEnding" CanUserAddRows="False" Height="530" Margin="10,0,6,0" >
                 <DataGrid.Columns>
                     <DataGridTextColumn x:Name="year" CanUserResize="False" CanUserSort="False" CanUserReorder="False" IsReadOnly="True" Header="Year"/>
@@ -109,12 +113,12 @@
             </DataGrid>
 
         </GroupBox>
-        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="924,593,0,0" VerticalAlignment="Top" Height="38" Width="118" Grid.RowSpan="2" Click="btnSubmit_Click"/>
-        <Button x:Name="btnClearParameters" Content="Clear ALL Non-Parameter Inputs/Selections" Margin="591,107,301,483" Click="btnClearParameters_Click"/>
-        <Button x:Name="btnRestoreModelDefault" Content="Restore Default Model Parameters" Margin="591,320,301,270" Click="RestoreModelDefault"/>
-        <Button x:Name="btnAddOrEdit" Content="Edit Existing or Add New Pollutant Parameters" Margin="591,496,301,94"/>
-        <Button x:Name="btnAddOrEditRestore" Content="Restore Default Pollutant Parameters" Margin="591,558,301,32"/>
-        <Button x:Name="btnTest" Content="TEST" Margin="591,222,301,368" Click="btnTest_Click"/>
+        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="591,593,0,0" VerticalAlignment="Top" Height="38" Width="118" Grid.RowSpan="2" Click="btnSubmit_Click" Grid.Column="1"/>
+        <Button x:Name="btnClearParameters" Content="Clear ALL Non-Parameter Inputs/Selections" Margin="258,107,301,483" Click="btnClearParameters_Click" Grid.Column="1"/>
+        <Button x:Name="btnRestoreModelDefault" Content="Restore Default Model Parameters" Margin="258,320,301,270" Click="RestoreModelDefault" Grid.Column="1"/>
+        <Button x:Name="btnAddOrEdit" Content="Edit Existing or Add New Pollutant Parameters" Margin="258,496,301,94" Grid.Column="1"/>
+        <Button x:Name="btnAddOrEditRestore" Content="Restore Default Pollutant Parameters" Margin="258,558,301,32" Grid.Column="1"/>
+        <Button x:Name="btnTest" Content="TEST" Margin="258,222,301,368" Click="btnTest_Click" Grid.Column="1"/>
 
 
     </Grid>

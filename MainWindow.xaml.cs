@@ -257,7 +257,7 @@ namespace lwrncLandgemWPF
 
         private void btnTest_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(Global.globalCurrentDataSheet.ToString());
+            MessageBox.Show(GlobalVariables.globalCurrentDataSheet.ToString());
         }
 
         private void btnClearParameters_Click(object sender, RoutedEventArgs e)
@@ -267,6 +267,7 @@ namespace lwrncLandgemWPF
             items.Clear();
             radioNo.IsChecked = true;
             radioYes.IsChecked = false;
+            comboWasteDesign.SelectedIndex = 0;
         }
 
         private void RestoreModelDefault(object sender, RoutedEventArgs e)
@@ -280,8 +281,33 @@ namespace lwrncLandgemWPF
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
-            InputReview inputReview = new InputReview();
-            Content = inputReview;
+            try
+            {
+                GlobalVariables.globalOpenYear = int.Parse(txtOpenYear.Text);
+                GlobalVariables.globalCloseYear = int.Parse(txtCloseYear.Text);
+                //GlobalVariables.globalCalculatedClosureYear = 
+                GlobalVariables.globalWasteDesignCapacity = comboWasteDesign.Text;
+
+                GlobalVariables.globalMethaneGen = comboMethanGen.Text;
+                GlobalVariables.globalPotentialMethaneGenCap = comboPotentialGen.Text;
+                GlobalVariables.globalNMOC = comboNMOC.Text;
+                GlobalVariables.globalMethaneContent = comboMethaneContent.Text;
+
+                GlobalVariables.globalPollutant1 = comboPollutant1.Text;
+                GlobalVariables.globalPollutant2 = comboPollutant2.Text;
+                GlobalVariables.globalPollutant3 = comboPollutant3.Text;
+                GlobalVariables.globalPollutant4 = comboPollutant.Text;
+
+                GlobalVariables.globalWasteAcceptanceRates = items;
+
+                InputReview inputReview = new InputReview(); //change page to review page
+                Content = inputReview;
+            }
+            catch
+            {
+                MessageBox.Show("Fill all info");
+            }
+
         }
     }
 }

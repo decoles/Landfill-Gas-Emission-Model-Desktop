@@ -5,11 +5,40 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:LandGEMWPF.views"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="666" d:DesignWidth="1080"
       Title="InputReview">
 
     <Grid>
-        <Label Content="Input Review" HorizontalAlignment="Left" Margin="31,16,0,0" VerticalAlignment="Top"/>
+        <Label Content="Input Review" HorizontalAlignment="Left" Margin="31,16,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Landfilll Characteristics" HorizontalAlignment="Left" Margin="50,63,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Gases/Pollutants Selected" HorizontalAlignment="Left" Margin="50,462,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Model Parameters" HorizontalAlignment="Left" Margin="50,243,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Landfill Open Year" HorizontalAlignment="Left" Margin="50,98,0,0" VerticalAlignment="Top"/>
+        <Label Content="Have Model Calculate Closure Year" HorizontalAlignment="Left" Margin="50,160,0,0" VerticalAlignment="Top"/>
+        <Label Content="Methane Generation Rake, k" Margin="50,281,862,0" VerticalAlignment="Top"/>
+        <Label Content="Landfil Closure Year" HorizontalAlignment="Left" Margin="50,129,0,0" VerticalAlignment="Top"/>
+        <Label Content="NMOC Concentration" Margin="50,343,900,0" VerticalAlignment="Top"/>
+        <Label Content="Gas / Pollutant #1:" Margin="50,503,900,0" VerticalAlignment="Top"/>
+        <Label Content="Potential Methane Generation Capacity, L₀" Margin="50,312,790,0" VerticalAlignment="Top"/>
+        <Label Content="Gas / Pollutant #4:" Margin="50,596,900,0" VerticalAlignment="Top"/>
+        <Label Content="Gas / Pollutant #3:" Margin="50,565,900,0" VerticalAlignment="Top"/>
+        <Label Content="Gas / Pollutant #2:" Margin="50,534,900,0" VerticalAlignment="Top"/>
+        <Label Content="Methane Content" Margin="50,374,900,0" VerticalAlignment="Top"/>
+        <Label Content="Landfill Name or Identifier" HorizontalAlignment="Left" Margin="170,16,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label x:Name="lblPollutant3" Content="test" HorizontalAlignment="Left" Margin="296,569,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label x:Name="lblCalculateCloseYr" Content="test" HorizontalAlignment="Left" Margin="296,161,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label x:Name="lblCloseYear" Content="test" HorizontalAlignment="Left" Margin="296,130,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label x:Name="lblOpenYear" Content="test" HorizontalAlignment="Left" Margin="296,101,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label x:Name="lblPollutant2" Content="test" HorizontalAlignment="Left" Margin="296,540,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label x:Name="lblMethContent" Content="test" HorizontalAlignment="Left" Margin="296,380,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label x:Name="lblNMOC" Content="test" HorizontalAlignment="Left" Margin="296,346,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label x:Name="lblPollutant1" Content="test" HorizontalAlignment="Left" Margin="296,509,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label x:Name="lblPollutant4" Content="test" HorizontalAlignment="Left" Margin="296,598,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label x:Name="lblPotentialMethGenRate" Content="test" HorizontalAlignment="Left" Margin="296,313,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label x:Name="lblMethGenRate" Content="test" HorizontalAlignment="Left" Margin="296,284,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Waste Design Capacity" HorizontalAlignment="Left" Margin="50,186,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblWasteCap" Content="test" HorizontalAlignment="Left" Margin="296,190,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label x:Name="lblName" Content="test" HorizontalAlignment="Left" Margin="373,16,0,0" VerticalAlignment="Top" FontSize="14"/>
 
     </Grid>
 </Page>

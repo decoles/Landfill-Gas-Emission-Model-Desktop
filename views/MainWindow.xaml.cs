@@ -288,10 +288,10 @@ namespace lwrncLandgemWPF
                 //GlobalVariables.globalCalculatedClosureYear = 
                 GlobalVariables.globalWasteDesignCapacity = comboWasteDesign.Text;
 
-                GlobalVariables.globalMethaneGen = comboMethanGen.Text;
-                GlobalVariables.globalPotentialMethaneGenCap = comboPotentialGen.Text;
-                GlobalVariables.globalNMOC = comboNMOC.Text;
-                GlobalVariables.globalMethaneContent = comboMethaneContent.Text;
+                GlobalVariables.globalMethaneGen = comboMethanGen.SelectedValue.ToString();
+                GlobalVariables.globalPotentialMethaneGenCap = comboPotentialGen.SelectedValue.ToString();
+                GlobalVariables.globalNMOC = comboNMOC.SelectedValue.ToString();
+                GlobalVariables.globalMethaneContent = comboMethaneContent.SelectedValue.ToString();
 
                 GlobalVariables.globalPollutant1 = comboPollutant1.Text;
                 GlobalVariables.globalPollutant2 = comboPollutant2.Text;
@@ -300,6 +300,8 @@ namespace lwrncLandgemWPF
 
                 GlobalVariables.globalWasteAcceptanceRates = items;
 
+
+                MessageBox.Show(comboMethanGen.SelectedValue.ToString());
                 InputReview inputReview = new InputReview(); //change page to review page
                 Content = inputReview;
             }

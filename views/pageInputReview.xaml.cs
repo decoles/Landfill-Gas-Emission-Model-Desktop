@@ -34,10 +34,27 @@ namespace LandGEMWPF.views
         {
             lblOpenYear.Content = GlobalVariables.globalOpenYear.ToString();
             lblCloseYear.Content = GlobalVariables.globalCloseYear.ToString();
-            lblCalculateCloseYr.Content = GlobalVariables.globalCalculatedClosureYear.ToString();
+            if(GlobalVariables.globalCalculatedClosureYear == true)
+            {
+                lblCalculateCloseYr.Content = "Yes";
+            }
+            else
+            {
+                lblCalculateCloseYr.Content = "No";
+            }
             lblWasteCap.Content = GlobalVariables.globalWasteDesignCapacity.ToString();
 
             lblMethGenRate.Content = GlobalVariables.globalMethaneGen.ToString();
+            lblPotentialMethGenRate.Content = GlobalVariables.globalMethaneContent.ToString();
+            lblNMOC.Content = GlobalVariables.globalNMOC.ToString();
+            lblMethContent.Content = GlobalVariables.globalMethaneContent.ToString();
+
+            lblPollutant1.Content = GlobalVariables.globalPollutant1.ToString();
+            lblPollutant2.Content = GlobalVariables.globalPollutant2.ToString();
+            lblPollutant3.Content = GlobalVariables.globalPollutant3.ToString();
+            lblPollutant4.Content = GlobalVariables.globalPollutant4.ToString();
+
+            lblName.Content = GlobalVariables.globalCurrentDataSheet.ToString();
 
         }
     }

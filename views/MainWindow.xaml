@@ -57,7 +57,7 @@
                         <ComboBoxItem Content="Inventory Conventional - 0.04" Tag="0.04"/>
                         <ComboBoxItem Content="Inventory Arid Area - 0.02" Tag="0.02"/>
                         <ComboBoxItem Content="Inventory Wet - 0.7" Tag="0.7"/>
-                        <ComboBoxItem Content="User Specified"/>
+                        <ComboBoxItem Content="User Specified" Tag="0"/>
                     </ComboBox>
                     <Label x:Name="lblMethaneGen" Content="User-Specified Value:" Width="146" Visibility="Hidden"/>
                     <TextBox x:Name="txtMethGen" TextWrapping="Wrap" Width="120" Visibility="Hidden"/>
@@ -71,7 +71,7 @@
                         <ComboBoxItem Content="Inventory Conventional - 100" Tag="100"/>
                         <ComboBoxItem Content="Inventory Arid Area - 100" Tag="100"/>
                         <ComboBoxItem Content="Inventory Wet - 96" Tag="96"/>
-                        <ComboBoxItem Content="User Specified"/>
+                        <ComboBoxItem Content="User Specified" Tag="0"/>
                     </ComboBox>
                     <Label x:Name="lblPotentialMethGen" Content="User-Specified Value:" Width="146" Visibility="Hidden"/>
                     <TextBox x:Name="txtMethGenCap" TextWrapping="Wrap" Width="120" Visibility="Hidden"/>
@@ -84,7 +84,7 @@
                         <ComboBoxItem Content="CAA - 4,000" Tag="4000"/>
                         <ComboBoxItem Content="Inventory No or Unkown Co-disposal - 600" Tag="600"/>
                         <ComboBoxItem Content="Inventory Co-disposal - 2,400" Tag="2400"/>
-                        <ComboBoxItem Content="User Specified"/>
+                        <ComboBoxItem Content="User Specified" Tag="0"/>
                     </ComboBox>
                     <Label x:Name="lblNMOC" Content="User-Specified Value:" Width="146" Visibility="Hidden"/>
                     <TextBox x:Name="txtNMOC" TextWrapping="Wrap" Width="120" Visibility="Hidden"/>
@@ -95,7 +95,7 @@
                 <StackPanel Orientation="Horizontal">
                     <ComboBox x:Name="comboMethaneContent" Width="240"  HorizontalAlignment="Left" SelectionChanged="comboMethaneContent_SelectionChanged" SelectedValuePath="Tag">
                         <ComboBoxItem Content="CAA - 50% by volume" Tag="50"/>
-                        <ComboBoxItem Content="User Specified"/>
+                        <ComboBoxItem Content="User Specified" Tag="0"/>
                     </ComboBox>
                     <Label x:Name="lblMethContent" Content="User-Specified Value:" Width="146" Visibility="Hidden"/>
                     <TextBox x:Name="txtMethContent" TextWrapping="Wrap" Width="120" Visibility="Hidden"/>
@@ -119,6 +119,7 @@
         <Button x:Name="btnAddOrEdit" Content="Edit Existing or Add New Pollutant Parameters" Margin="258,496,301,94" Grid.Column="1"/>
         <Button x:Name="btnAddOrEditRestore" Content="Restore Default Pollutant Parameters" Margin="258,558,301,32" Grid.Column="1"/>
         <Button x:Name="btnTest" Content="TEST" Margin="258,222,301,368" Click="btnTest_Click" Grid.Column="1"/>
+        <!--<Frame Name="MainFrame" Margin="16" Background="White" NavigationUIVisibility="Hidden"/>--> 
 
 
     </Grid>

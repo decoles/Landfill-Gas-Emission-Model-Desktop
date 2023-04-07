@@ -25,20 +25,27 @@
         <Label Content="Gas / Pollutant #2:" Margin="50,534,900,0" VerticalAlignment="Top"/>
         <Label Content="Methane Content" Margin="50,374,900,0" VerticalAlignment="Top"/>
         <Label Content="Landfill Name or Identifier" HorizontalAlignment="Left" Margin="170,16,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Label x:Name="lblPollutant3" Content="test" HorizontalAlignment="Left" Margin="296,569,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Label x:Name="lblCalculateCloseYr" Content="test" HorizontalAlignment="Left" Margin="296,161,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Label x:Name="lblCloseYear" Content="test" HorizontalAlignment="Left" Margin="296,130,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Label x:Name="lblOpenYear" Content="test" HorizontalAlignment="Left" Margin="296,101,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Label x:Name="lblPollutant2" Content="test" HorizontalAlignment="Left" Margin="296,540,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Label x:Name="lblMethContent" Content="test" HorizontalAlignment="Left" Margin="296,380,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Label x:Name="lblNMOC" Content="test" HorizontalAlignment="Left" Margin="296,346,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Label x:Name="lblPollutant1" Content="test" HorizontalAlignment="Left" Margin="296,509,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Label x:Name="lblPollutant4" Content="test" HorizontalAlignment="Left" Margin="296,598,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Label x:Name="lblPotentialMethGenRate" Content="test" HorizontalAlignment="Left" Margin="296,313,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Label x:Name="lblMethGenRate" Content="test" HorizontalAlignment="Left" Margin="296,284,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label x:Name="lblPollutant3" Content="test" HorizontalAlignment="Left" Margin="296,569,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Label x:Name="lblCalculateCloseYr" Content="test" HorizontalAlignment="Left" Margin="296,161,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Label x:Name="lblCloseYear" Content="test" HorizontalAlignment="Left" Margin="296,130,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Label x:Name="lblOpenYear" Content="test" HorizontalAlignment="Left" Margin="296,101,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Label x:Name="lblPollutant2" Content="test" HorizontalAlignment="Left" Margin="296,540,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Label x:Name="lblMethContent" Content="test" HorizontalAlignment="Left" Margin="296,380,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Label x:Name="lblNMOC" Content="test" HorizontalAlignment="Left" Margin="296,346,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Label x:Name="lblPollutant1" Content="test" HorizontalAlignment="Left" Margin="296,509,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Label x:Name="lblPollutant4" Content="test" HorizontalAlignment="Left" Margin="296,598,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Label x:Name="lblPotentialMethGenRate" Content="test" HorizontalAlignment="Left" Margin="296,313,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Label x:Name="lblMethGenRate" Content="test" HorizontalAlignment="Left" Margin="296,284,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
         <Label Content="Waste Design Capacity" HorizontalAlignment="Left" Margin="50,186,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblWasteCap" Content="test" HorizontalAlignment="Left" Margin="296,190,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label x:Name="lblWasteCap" Content="test" HorizontalAlignment="Left" Margin="296,190,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
         <Label x:Name="lblName" Content="test" HorizontalAlignment="Left" Margin="373,16,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <DataGrid x:Name="dataReview" Margin="708,0,0,0"/>
+        <Label Content="Year⁻¹" HorizontalAlignment="Left" Margin="350,284,0,0" VerticalAlignment="Top"/>
+        <Label Content="m³/Mg" HorizontalAlignment="Left" Margin="350,316,0,0" VerticalAlignment="Top"/>
+        <Label Content="ppmv as hexane" HorizontalAlignment="Left" Margin="350,351,0,0" VerticalAlignment="Top"/>
+        <Label Content="% by volume" HorizontalAlignment="Left" Margin="350,383,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnContinue" Content="Confirm" HorizontalAlignment="Left" Margin="540,609,0,0" VerticalAlignment="Top" Height="40" Width="147" Click="btnContinue_Click"/>
+        <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="540,554,0,0" VerticalAlignment="Top" Height="40" Width="147" Click="btnBack_Click"/>
 
     </Grid>
 </Page>

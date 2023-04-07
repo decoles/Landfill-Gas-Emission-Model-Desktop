@@ -1,4 +1,5 @@
 ﻿using LandGEMWPF.objects;
+using lwrncLandgemWPF;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,10 +25,13 @@ namespace LandGEMWPF.views
 
     public partial class InputReview : Page
     {
+
         public InputReview()
         {
             InitializeComponent();
-            loadVariables();
+            loadVariables(); //Load all variables on page load
+            
+            dataReview.ItemsSource = GlobalVariables.globalWasteAcceptanceRates;
         }
 
         private void loadVariables()
@@ -55,6 +59,16 @@ namespace LandGEMWPF.views
             lblPollutant4.Content = GlobalVariables.globalPollutant4.ToString();
 
             lblName.Content = GlobalVariables.globalCurrentDataSheet.ToString();
+
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnContinue_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }

@@ -19,16 +19,19 @@ using System.Data;
 using System.Collections.ObjectModel;
 using LandGEMWPF.objects;
 using LandGEMWPF.views;
+using System.Text.RegularExpressions;
 
 namespace lwrncLandgemWPF
 {
     public partial class MainWindow : Window
     {
         ObservableCollection<Item> items = new ObservableCollection<Item>(); //public list
+        private static readonly Regex _regex = new Regex("[^0-9.]+"); //regex that matches disallowed text
 
         public MainWindow()
         {
             InitializeComponent();
+            Application.Current.MainWindow = this;  
             var file = @"content\pollutants.csv";
             var lines = File.ReadAllLines(file);
             foreach ( var line in lines)
@@ -278,20 +281,74 @@ namespace lwrncLandgemWPF
             comboMethaneContent.SelectedIndex = 0;
             hideUserSpecifiedSecTwo();
         }
-
+        private static bool IsTextAllowed(string text)
+        {
+            return !_regex.IsMatch(text);
+        }
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
+            
             try
             {
+               // if (comboMethanGen.SelectedValue.ToString() == "0" || comboPotentialGen.SelectedValue.ToString() == "0" || comboNMOC.SelectedValue.ToString() == "0" || comboMethaneContent.SelectedValue.ToString() == "0")
+                //{
+                //    if (txtMethGen.Text == "" || txtMethGenCap.Text == "" || txtNMOC.Text == "" || txtMethContent.Text == "")
+                 //   {
+                 //       MessageBox.Show("Verify All User Input Boxes Are Filled");
+                 ///       return;
+                 //   }
+               // }
+               // }
+
+                if(comboMethanGen.SelectedValue.ToString() == "0" && !IsTextAllowed(txtMethGen.Text) && txtMethGen.Text != "")
+                {
+                    MessageBox.Show("Verify All User Input Boxes Are Filled With Numerical Data");
+                    return;
+                }
+                if (comboPotentialGen.SelectedValue.ToString() == "0" && !IsTextAllowed(txtMethGenCap.Text) && txtMethGenCap.Text != "")
+                {
+                    MessageBox.Show("Verify All User Input Boxes Are Filled With Numerical Data");
+                    return;
+                }
+                if (comboNMOC.SelectedValue.ToString() == "0" && !IsTextAllowed(txtNMOC.Text) && txtNMOC.Text != "")
+                {
+                    MessageBox.Show("Verify All User Input Boxes Are Filled With Numerical Data");
+                    return;
+                }
+                if (comboMethaneContent.SelectedValue.ToString() == "0" && !IsTextAllowed(txtMethContent.Text) && txtMethContent.Text != "")
+                {
+                    MessageBox.Show("Verify All User Input Boxes Are Filled With Numerical Data");
+                    return;
+                }
+
                 GlobalVariables.globalOpenYear = int.Parse(txtOpenYear.Text);
                 GlobalVariables.globalCloseYear = int.Parse(txtCloseYear.Text);
                 //GlobalVariables.globalCalculatedClosureYear = 
                 GlobalVariables.globalWasteDesignCapacity = comboWasteDesign.Text;
 
-                GlobalVariables.globalMethaneGen = comboMethanGen.SelectedValue.ToString();
-                GlobalVariables.globalPotentialMethaneGenCap = comboPotentialGen.SelectedValue.ToString();
-                GlobalVariables.globalNMOC = comboNMOC.SelectedValue.ToString();
-                GlobalVariables.globalMethaneContent = comboMethaneContent.SelectedValue.ToString();
+                //User specified combo box values
+                if(comboMethanGen.SelectedValue.ToString() == "0")
+
+                    GlobalVariables.globalMethaneGen = txtMethGen.Text;
+                else
+                    GlobalVariables.globalMethaneGen = comboMethanGen.SelectedValue.ToString();
+
+                if (comboPotentialGen.SelectedValue.ToString() == "0")
+                    GlobalVariables.globalPotentialMethaneGenCap = txtMethGenCap.Text;
+                else
+                    GlobalVariables.globalPotentialMethaneGenCap = comboPotentialGen.SelectedValue.ToString();
+
+                if (comboNMOC.SelectedValue.ToString() == "0")
+                    GlobalVariables.globalNMOC = txtNMOC.Text;
+                else
+                    GlobalVariables.globalNMOC = comboNMOC.SelectedValue.ToString();
+
+                if(comboMethaneContent.SelectedValue.ToString() == "0")
+                    GlobalVariables.globalMethaneContent = txtMethContent.Text;
+                else
+                    GlobalVariables.globalMethaneContent = comboMethaneContent.SelectedValue.ToString();
+
+
 
                 GlobalVariables.globalPollutant1 = comboPollutant1.Text;
                 GlobalVariables.globalPollutant2 = comboPollutant2.Text;
@@ -300,8 +357,6 @@ namespace lwrncLandgemWPF
 
                 GlobalVariables.globalWasteAcceptanceRates = items;
 
-
-                MessageBox.Show(comboMethanGen.SelectedValue.ToString());
                 InputReview inputReview = new InputReview(); //change page to review page
                 Content = inputReview;
             }
